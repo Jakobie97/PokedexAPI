@@ -22,11 +22,21 @@ const displayPokemon = (pokemon) => {
     const pokemonHTMLString = pokemon
         .map(
             (pokeman) => `
-        <li class="card">
-            <img class="card-image" src="${pokeman.image}"/>
-            <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
-            <p class="card-subtitle">Type: ${pokeman.type}</p>
-        </li>
+        <div class ="card">
+            <li class="card">
+                <img class="card-image" src="${pokeman.image}"/>
+                
+                <div class ="container">
+                    <h2 class="card-title"> ${pokeman.name}</h2>
+                    <p class="card-subtitle">Type: ${pokeman.type}</p>
+
+                    <a href="https://www.pokemon.com/us/pokedex/${pokeman.name}">
+                    <button> check Stats</button>
+                    </a>
+
+                </div>
+            </li>
+        </div>
     `
         )
         .join('');
